@@ -24,29 +24,25 @@ body {
     line-height: 150%;
 }
 
+.flavor {
+    display: inline;
+}
+
 h1 {
     margin: 50px 0 20px;
     font-family: 'Cambo', serif;
-    display: inline-block;
     font-size: 8vw;
     line-height: 4.5vw;
     vertical-align: -20px;
+    /* display: inline; */
 }
 
-.arena {
-    /* margin: 10px 0; */
+#arena {
     font-family: 'Cambo', serif;
     color: #c55555;
     font-size: 4vw;
     line-height: 2.5vw;
-}
-
-.portfolio {
-    font-family: 'Cambo', serif;
-    color: #22e;
-    font-size: 4vw;
-    display: inline;
-    vertical-align: -3vw;
+    margin-top: 25px;
 }
 
 .dec, .varname, .punc {
@@ -108,24 +104,49 @@ input[type=submit] {
     min-height: 100%;
 }
 
-#projectSet ul {
+#projects {
+    margin: 30px 20px 10px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+}
+
+#projectsTitleDiv {
+    font-family: 'Cambo', serif;
+    color: #22e;
+    font-size: 4vw;
+    line-height: 100%;
+    display: inline-block;
+    background-color: white;
+    /* margin-top: 25%; */
+    width: 100%;
+    /* height: 100%; */
+}
+
+#cardContainer {
+    display: inline-block;
+    width: 100%;
+}
+
+#projectSet {
+    /* width: 100%; */
+    display: inline-block;
+    /* float: right; */
 }
 
 .project {
     vertical-align: top;
+    text-align: left;
     width: 250px;
     margin: 10px;
     background-color: rgb(219, 217, 197);
     border-radius: 10px;
     overflow: hidden;
     display: inline-block;
+    /* flex-basis: 250px; */
+
 }
 
 .small {
-    width: 10%;
+    width: 15%;
 }
 
 .project img {
@@ -223,9 +244,9 @@ input[type=submit] {
     color: #fff;
 }
 
-#main-content {
+/* #main-content {
     padding: 0 20px 70px;
-}
+} */
 
 section {
     background-color: #fff;

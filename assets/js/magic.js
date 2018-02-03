@@ -37,34 +37,35 @@ function displayProjects() {
     }
     project.append(image, info);
     console.log(project);
-    $("#projectSet").append(project.addClass("small"));
+    $("#cardContainer").append(project.addClass("small"));
   }
 }
 
 displayProjects();
 
-$("#projectSet").on("click", function() {
-  $(".info").show();
-  $(".project").removeClass("small");
-  $(".portfolio").text("collapse.projects").removeAttr("display");
+$(document).on("click", "#projectsTitleDiv", function() {
+  if ($(".projectsTitle").text() === "collapse.projects()") {
+    $(".projectsTitle").text("expand.projects()");
+    $(".info").toggle();
+    $(".project").addClass("small");
+  } else {
+    $(".projectsTitle").text("collapse.projects()")
+    $(".info").toggle();
+    $(".project").removeClass("small");
+  }
 });
 
-$("").on("click", function() {
-  $(".info").hide();
-  $(".project").addClass("small");
-  $(".portfolio").text("projects").attr("display", "inline");
-});
+function addFlavor(parts, whut) {
+  var flavor = $("<div>").addClass("flavor");
+  for (var i = 0; i < parts.length; i++) {
+    var bit = $("<span>").text(parts[i]);
+    i++;
+    bit.addClass(parts[i]);
+    flavor.append(bit);
+  }
+  return flavor
+}
 
-function addFlavor(subject, p1, p1t, p2, p2t, p3, p3t, ap1, ap1t, ap2, ap2t) {
-  var flavor1 = $("<span>").addClass(p1t).text(p1);
-  var flavor2 = $("<span>").addClass(p2t).text(p2);
-  var flavor3 = $("<span>").addClass(p3t).text(p3);
-  $(subject).prepend(flavor1, flavor2, flavor3);
-  var afterFlavor1 = $("<span>").addClass(ap1t).text(ap1);
-  var afterFlavor2 = $("<span>").addClass(ap2t).text(ap2);
-  $(subject).append(afterFlavor1, afterFlavor2)
-};
-
-addFlavor("h1", "const ", "dec", "me ", "varname", "= ", "punc", ";", "punc");
-addFlavor(".arena", "var ", "dec", "does ", "varname", "= ", "punc", ";", "punc");
-addFlavor(".portfolio", null, null, null, null, null, null, " =", "punc", " [", "punc");
+$("h1").prepend(addFlavor(["const ", "dec", "me ", "varname", "= ", "punc"])).append(addFlavor([";", "punc"]));
+$("#arena").prepend(addFlavor(["var ", "dec", "does ", "varname", "= ", "punc"])).append(addFlavor([";", "punc"]));
+$("#projectsTitleDiv").append(addFlavor([" =", "punc", " [ ", "punc"]));

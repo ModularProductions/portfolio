@@ -23,3 +23,7 @@ isAvailable(opportunities) = true;
 
 ### features
 clicking on skills filter project display by flags
+
+establish different CSS and JS pages for different styles; offer selectable style menu
+
+- animated images on rollover would be nice
