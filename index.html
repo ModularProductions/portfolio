@@ -12,28 +12,20 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Alegreya:400i|Cambo|Courgette|Kotta+One|Roboto+Mono|Sriracha" rel="stylesheet">
 </head>
 <body>
   <div id="wrap">
-    <header>
-      <div id="header-content">  
-        <h1>Matt Haddock</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div> <!-- header-content -->
-    </header>
+    <h1>Matt Haddock</h1>
+    <p class="arena">design and development</p>
+    <div id="projectSet">
+      <p class="portfolio">projects</p>
+    </div>
+
+
+
+
     <div id="main-content">
-      <section id="about">
-        <h2>About Me</h2>
-        <img src="assets/images/me.jpeg" />
-        <p>Hailing from Northern Virginia, I came to Georgia in pursuit of a degree in Illustration. As fate would have it, I got involved in the shadowy world of theater while in school, and though I did attain the degree, have been spending my time since as a theatrical technician and audio engineer. Along the way, I've developed an alter ego as a club DJ and music designer, and can be found blasting massive industrial beats when I'm not involved in soundtrack design for fashion shows. Other pastimes include Photoshop, Playstations, and carpentry.</p>
-        <p>I've recently begun exploring a longtime hobby of computer coding more deeply, and am attending formal training with the goal of improving my skills and exploring new opportunities in hunching over computers.</p>
-      </section> <!-- about -->
       <section id="connect">
         <h2>Connect with Me</h2>
         <ul>
@@ -42,15 +34,40 @@
           <li><a href="http://www.stackoverflow.com/users/8679340/nosferadude"><img src="assets/images/stackoverflow.png" width="50" height="50" alt="Stack Overflow" /></a></li>
         </ul>
       </section> <!-- connect -->
+      <section id="about">
+        <h2>About Me</h2>
+        <img src="assets/images/me.jpeg" />
+        <p>Hailing from Northern Virginia, I came to Georgia in pursuit of a degree in Illustration. As fate would have it, I got involved in the shadowy world of theater while in school, and though I did attain the degree, have been spending my time since as a theatrical technician and audio engineer. Along the way, I've developed an alter ego as a club DJ and music designer, and can be found blasting massive industrial beats when I'm not involved in soundtrack design for fashion shows. Other pastimes include Photoshop, Playstations, and carpentry.</p>
+        <p>I've recently begun exploring a longtime hobby of computer coding more deeply, and am attending formal training with the goal of improving my skills and exploring new opportunities in hunching over computers.</p>
+      </section> <!-- about -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <form method="post" name="myemailform" action="contact.php">
+          <p>
+            <label for='name'>Name</label><br>
+            <input type="text" name="name" placeholder="Alan Smithee">
+          </p>
+          <p>
+            <label for='email'>Email</label><br>
+            <input type="email" name="email" placeholder="someone@domain.com">
+          </p>
+          <p>
+            <label for='message'>Message</label> <br>
+            <textarea name="message" placeholder="Get a life!"></textarea>
+          </p>
+          <input type="submit" name='submit' value="submit">
+        </form>
+      </section> <!-- contact -->
     </div> <!-- main-content -->
   </div> <!-- wrap -->
   <footer>
-    <p>© Copyright 2017 Matt Haddock</p>
+    <p>© Copyright 2018 Matt Haddock</p>
   </footer>
   <script 
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <script src="projects.js"></script>
   <script src="assets/js/magic.js"></script>
 </body>
 </html>

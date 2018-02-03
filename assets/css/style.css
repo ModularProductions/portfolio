@@ -2,9 +2,19 @@
     box-sizing: inherit;       
 }
 
+#fontfamilies {
+    font-family: 'Courgette', cursive;
+    font-family: 'Sriracha', cursive;
+    font-family: 'Cambo', serif;
+    font-family: 'Kotta One', serif;
+    font-family: 'Alegreya', serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
 html, body {
     height: 100%;
     box-sizing: border-box;
+    text-align: right;
 }
 
 body {
@@ -15,24 +25,44 @@ body {
 }
 
 h1 {
-    text-align: center;
-    width: 100%;
-    height: 68px;
-    line-height: 68px;
-    background-color: #4aaaa5;
-    color: #fff;
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    font-size: xx-large;
+    margin: 50px 0 20px;
+    font-family: 'Cambo', serif;
+    display: inline-block;
+    font-size: 8vw;
+    line-height: 4.5vw;
+    vertical-align: -20px;
 }
 
-h2 {
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    color: #4aaaa5;
-    font-size: x-large;
-    margin-bottom: 20px;
-    border-bottom: solid 2px #ddd;
-    width: 100%;
-    padding-bottom: 20px;    
+.arena {
+    /* margin: 10px 0; */
+    font-family: 'Cambo', serif;
+    color: #c55555;
+    font-size: 4vw;
+    line-height: 2.5vw;
+}
+
+.portfolio {
+    font-family: 'Cambo', serif;
+    color: #22e;
+    font-size: 4vw;
+    display: inline;
+    vertical-align: -3vw;
+}
+
+.dec, .varname, .punc {
+    font-family: 'Alegreya', serif;
+}
+
+.dec {
+    color: #6663;
+}
+
+.varname {
+    color: #22e3;
+}
+
+.punc {
+    color: #4aaaa533;
 }
 
 li {
@@ -78,30 +108,119 @@ input[type=submit] {
     min-height: 100%;
 }
 
-header {
-    height: 140px;
-    border-bottom: 2px solid #aaa;
-    background-color: #fff;
-    margin-bottom: 20px;
+#projectSet ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#header-content {
+.project {
+    vertical-align: top;
+    width: 250px;
+    margin: 10px;
+    background-color: rgb(219, 217, 197);
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.small {
+    width: 10%;
+}
+
+.project img {
     width: 100%;
-    position: relative;
-    margin: 0 auto;
-}
-
-nav {
-    height: 68px;
-    line-height: 68px;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
-
-nav li {
     margin: 0;
-    width: 25%;
+    margin-bottom: -8px;
+}
+
+.info {
+    border-top: 2px solid #333;
+    padding: 10px 10px 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    line-height: 12px;
+    display: none;
+}
+
+.titleBar {
+    height: 25px;
+    clear: both;
+}
+
+.info a {
+    border: 1px solid #444;
+    padding: 1px 3px;
+
+}
+
+.info li {
+    display: inline-block;
+    padding: 4px 4px;
+    margin: 2px;
+    border-radius: 5px;
+    /* background-color: red; */
+}
+
+.projectLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.link {
+    /* width: 48%; */
+    font-size: 10px;
+    text-align: center;
+    border: 1px #444 solid;
+    border-radius: 5px;
+}
+
+.project a {
+    display: block;
+}
+
+.projectName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    /* line-height: 20px; */
+    color: #222;
+    font-family: 'Cambo', serif;
+}
+
+.projectType, .collab {
+    margin: 0 0 0 4px;
+    font-style: italic;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.288);
+    color: #ddd;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.projectDesc {
+    text-align: initial;
+}
+
+.project li {
+    flex-grow: 1;
+}
+
+.logic {
+    background-color: rgb(243, 113, 113);
+    color: #fff;
+}
+
+.presentation {
+    background-color: rgb(118, 204, 118);
+    color: #fff;
+}
+
+.framework {
+    background-color: rgb(106, 106, 240);
+    color: #fff;
 }
 
 #main-content {
@@ -124,26 +243,6 @@ section {
     margin: 0 1rem .5rem 0;
 }
 
-#portfolio li {
-    width: 100%;
-    position: relative;
-    margin-bottom: 10px; 
-}
-
-#portfolio img {
-    width: 100%;
-}
-
-#portfolio p {
-    padding: 15px 0;
-    width: 100%;
-    margin-top: -70px;
-    background-color: #4aaaa5;
-    text-align: center;
-    color: white;
-    position: absolute;
-}
-
 #connect li {
     padding: 0 10px;
 }
@@ -164,24 +263,6 @@ footer {
     header {
         height: 70px;    
     }
-
-    h1 {
-        margin-left: 20px;
-        width: 9em;
-    }
-
-    nav {
-        position: absolute;
-        top: 0;
-        right: 0px;        
-        margin-right: 20px;
-        width: initial;
-    }
-
-    nav li {
-        width: initial;
-        margin-left: 20px;
-    }
     
     #about img {
         width: 50%;
@@ -190,32 +271,9 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-    section {
-        width: calc(100% - 290px);
-    }
 
-    #connect {
-        text-align: center;   
-        float: right;
-        width: 270px;
-    }
 }
 
 @media screen and (min-width: 980px) {      
-    header {
-        min-width: 960px;
-    }
-    
-    #header-content {
-        width: 960px;
-    }
-        
-    #main-content {
-        width: 960px;
-        margin: 0 auto;
-    }
-     
-    #portfolio li {
-        width: calc((100% - 20px) / 2);
-    }
+
 }
