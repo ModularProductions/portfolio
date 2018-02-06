@@ -17,19 +17,59 @@
 <body>
   <div id="wrap">
     <div id="name">
+      <div id="network" class="hidden">
+        <ul>
+          <li><a href="http://www.github.com/ModularProductions"><img src="assets/images/github.png" width="30" height="30" alt="GitHub" target="_blank" /></a></li>
+          <li><a href="http://www.twitter.com/TheNosferadude"><img src="assets/images/twitter.png" width="30" height="30" alt="Twitter" target="_blank" /></a></li>
+          <li><a href="http://www.stackoverflow.com/users/8679340/nosferadude"><img src="assets/images/stackoverflow.png" width="30" height="30" alt="Stack Overflow" target="_blank" /></a></li>
+        </ul>
+        <
+      </div>
+      <div class="flavor pre inline">
+        <span class="dec">const </span>
+        <span class="varname">me </span>
+        <span class="punc">= </span>
+      </div>
       <h1>Matt Haddock</h1>
+      <span class="punc"> ;</span>
     </div>
     <div id="arena">
       <span class="arenaWords">design and development</span>
     </div>
-    <div id="projects">
-      <div id="projectsTitleDiv">
-          <span class="projectsTitle">expand.projects()</span>
-      </div>
-      <div id="cardContainer">
+    <div id="projectsMenu">
+      <span class="projectsToggle">expand.projects</span>
+      <span class="filterArea hidden">
+        (
+        <span class="filterText">filter :: </span>
+        <ul id="filterSet"></ul>
+        );
+        </span>
+        <span class="thumbnails inline">
+        = [
+        <div id="thumbSet">
+        </div>
+        ];
+      </span>
+    </div>
+    <div id="projectsDisplay">
+    </div>
+    <div id="contact">
+      <div id="contactContainer">
+        <div class="contact">$(hitMe).up<span class="submit">"SEND", message</span></div>
+        <div id = "emailForm">
+          <form method="post" name="myemailform" action="contact.php">
+            <input type="submit" name='submit' class="hidden">
+            <input type="text" name="name" placeholder="name">
+            <input type="email" name="email" placeholder="email@address.com">
+            <textarea name="message" placeholder="tell me your secrets"></textarea>
+          </form>
+        </div>
       </div>
     </div>
-
+  </div> <!-- wrap -->
+  <footer>
+    <p>© Copyright 2018 Matt Haddock</p>
+  </footer>
     <!-- <div id="main-content">
       <section id="connect">
         <h2>Connect with Me</h2>
@@ -45,29 +85,7 @@
         <p>Hailing from Northern Virginia, I came to Georgia in pursuit of a degree in Illustration. As fate would have it, I got involved in the shadowy world of theater while in school, and though I did attain the degree, have been spending my time since as a theatrical technician and audio engineer. Along the way, I've developed an alter ego as a club DJ and music designer, and can be found blasting massive industrial beats when I'm not involved in soundtrack design for fashion shows. Other pastimes include Photoshop, Playstations, and carpentry.</p>
         <p>I've recently begun exploring a longtime hobby of computer coding more deeply, and am attending formal training with the goal of improving my skills and exploring new opportunities in hunching over computers.</p>
       </section>
-      <section id="contact">
-        <h2>Contact</h2>
-        <form method="post" name="myemailform" action="contact.php">
-          <p>
-            <label for='name'>Name</label><br>
-            <input type="text" name="name" placeholder="Alan Smithee">
-          </p>
-          <p>
-            <label for='email'>Email</label><br>
-            <input type="email" name="email" placeholder="someone@domain.com">
-          </p>
-          <p>
-            <label for='message'>Message</label> <br>
-            <textarea name="message" placeholder="Get a life!"></textarea>
-          </p>
-          <input type="submit" name='submit' value="submit">
-        </form>
-      </section>
     </div> -->
-  </div> <!-- wrap -->
-  <footer>
-    <p>© Copyright 2018 Matt Haddock</p>
-  </footer>
   <script 
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

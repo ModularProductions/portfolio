@@ -6,8 +6,7 @@ var projects = [
     image : "assets/images/liri-node-app.png",
     webLink : undefined,
     gitLink : "https://www.github.com/ModularProductions/liri-node-app.git",
-    collab : false,
-    flags : ["Node", "API"]
+    tags : ["Node", "API"]
   },
   {
     name : "eventTravel",
@@ -16,8 +15,7 @@ var projects = [
     image : "assets/images/eventTravel.png",
     webLink : "http://ModularProductions.github.io/eventTravel/",
     gitLink : "https://www.github.com/ModularProductions/eventTravel.git",
-    collab : true,
-    flags : ["API", "JS", "jQuery"]
+    tags : ["API", "JS", "jQuery", "collaboration"]
   },
   {
     name : "Horror Night Trivia",
@@ -26,8 +24,7 @@ var projects = [
     image : "assets/images/triviagame.png",
     webLink : "http://ModularProductions.github.io/TriviaGame/",
     gitLink : "https://www.github.com/ModularProductions/TriviaGame.git",
-    collab : false,
-    flags : ["JS", "jQuery"]
+    tags : ["JS", "jQuery"]
   },
   {
     name : "Hangman",
@@ -36,7 +33,6 @@ var projects = [
     image : "assets/images/hangman.png",
     webLink : "http://ModularProductions.github.io/Hangman-game/",
     gitLink : "https://www.github.com/ModularProductions/Hangman-game.git",
-    collab : false,
-    flags : ["JS", "CSS"]
+    tags : ["JS", "CSS"]
   }
 ]

@@ -2,19 +2,11 @@
     box-sizing: inherit;       
 }
 
-#fontfamilies {
-    font-family: 'Courgette', cursive;
-    font-family: 'Sriracha', cursive;
-    font-family: 'Cambo', serif;
-    font-family: 'Kotta One', serif;
-    font-family: 'Alegreya', serif;
-    font-family: 'Roboto Mono', monospace;
-}
-
 html, body {
     height: 100%;
     box-sizing: border-box;
     text-align: right;
+    font-size: 2vh;
 }
 
 body {
@@ -28,21 +20,27 @@ body {
     display: inline;
 }
 
-h1 {
-    margin: 50px 0 20px;
+#name {
     font-family: 'Cambo', serif;
-    font-size: 8vw;
-    line-height: 4.5vw;
-    vertical-align: -20px;
-    /* display: inline; */
+    font-size: 8vh;
+    line-height: 8vh;
+    padding: 0 2vw;
+    display: block;
+}
+
+h1 {
+    font-family: 'Cambo', serif;
+    font-size: 8h;
+    line-height: 8vh;
+    display: inline;
 }
 
 #arena {
     font-family: 'Cambo', serif;
     color: #c55555;
-    font-size: 4vw;
-    line-height: 2.5vw;
-    margin-top: 25px;
+    font-size: 4vh;
+    line-height: 2.5vh;
+    padding: 1vh 2vw 2vh;
 }
 
 .dec, .varname, .punc {
@@ -79,57 +77,143 @@ a:hover {
     color: #4aaaa5;
 }
 
-input[type=text], input[type=email], textarea {
-    width: 100%;
-    padding: 5px;
-    border: solid 1px #ddd;
-    color: #777;
-}
-
-textarea {
-    height: 200px;
-    resize: none;
-}
-
-input[type=submit] {
-    width: 100px;
-    background-color: #4aaaa5;
-    color: white;
-    border: none;
-    height: 40px;
-    font-size: medium;
-}
-
 #wrap {
     min-height: 100%;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
 }
 
-#projects {
-    margin: 30px 20px 10px;
-    display: flex;
-}
-
-#projectsTitleDiv {
+#projectsMenu {
     font-family: 'Cambo', serif;
     color: #22e;
-    font-size: 4vw;
-    line-height: 100%;
-    display: inline-block;
-    background-color: white;
-    /* margin-top: 25%; */
-    width: 100%;
-    /* height: 100%; */
+    font-size: 4vh;
+    background-color: rgba(255, 26, 26, 0.151);
+    padding: 2vh 2vw;
+    margin: -1vh 0;
+    vertical-align: middle;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom,
+    rgba(255,0,0,0),
+    rgba(255, 26, 26, 0.151) 1vh,
+    rgba(255, 26, 26, 0.151) calc(100% - 1vh), 
+    rgba(255,0,0,0)); /* Standard syntax (must be last) */
 }
 
-#cardContainer {
-    display: inline-block;
-    width: 100%;
+.hidden {
+    display: none;
 }
 
-#projectSet {
-    /* width: 100%; */
+.inline {
+    display: inline-block;;
+}
+
+.logic {
+    background-color: rgb(243, 113, 113);
+    color: #fff;
+}
+
+.presentation {
+    background-color: rgb(118, 204, 118);
+    color: #fff;
+}
+
+.framework {
+    background-color: rgb(106, 106, 240);
+    color: #fff;
+}
+
+.projectType {
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.288);
+    color: #ddd;
+}
+
+.collab {
+    background-color: rgba(0, 0, 0, 0.288);
+    color: #ddd;
+}
+
+.filterArea {
+    margin-left: -1vw;
+    margin: .5vh .5vw .5vh 0;
+    vertical-align: middle;
+}
+
+.hideFilter {
+    display: none;
+}
+
+.filterText {
+    color: #5288da;
+    font-size: 2.5vh;
+    vertical-align: middle;
+    line-height: 4vh;
+}
+
+#filterSet {
+    display: inline;
+}
+
+#filterSet ul {
+    /* vertical-align: baseline; */
+    margin: auto;
+    display: inline;
+    max-width: 70%;
+}
+
+#filterSet li {
+    vertical-align: middle;
+    margin: 0 .25vw;
+}
+
+.filter {
+    line-height: 2vh;
+    font-size: 1.5vh;
+    color: #fff;
+    margin: 0 .5vw .5vh;
+    border-radius: 10px;
+    padding: .3vh 1vw;
+}
+
+.dim {
+    background-color: transparent;
+    color: #999;
+    border: 1px solid #999;
+}
+
+.thumbnail {    
     display: inline-block;
-    /* float: right; */
+    vertical-align: middle;
+}
+
+.thumbnail p {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.thumbnail img {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 4vh;
+    overflow: auto;
+}
+
+#thumbSet {
+    display: inline;
+    overflow: visible;
+}
+
+#projectsDisplay {
+    display: none;
+    margin: -1vh 0;
+    max-height: 64vh;
+    overflow: auto;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom,
+    rgba(255,0,0,0),
+    rgba(255, 26, 26, 0.151) 1vh,
+    rgba(255, 26, 26, 0.151) calc(100% - 1vh), 
+    rgba(255,0,0,0)); /* Standard syntax (must be last) */
 }
 
 .project {
@@ -141,12 +225,6 @@ input[type=submit] {
     border-radius: 10px;
     overflow: hidden;
     display: inline-block;
-    /* flex-basis: 250px; */
-
-}
-
-.small {
-    width: 15%;
 }
 
 .project img {
@@ -161,7 +239,6 @@ input[type=submit] {
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     line-height: 12px;
-    display: none;
 }
 
 .titleBar {
@@ -180,17 +257,16 @@ input[type=submit] {
     padding: 4px 4px;
     margin: 2px;
     border-radius: 5px;
-    /* background-color: red; */
 }
 
 .projectLinks {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    min-width: 48%;
 }
 
 .link {
-    /* width: 48%; */
     font-size: 10px;
     text-align: center;
     border: 1px #444 solid;
@@ -205,20 +281,16 @@ input[type=submit] {
     text-align: center;
     font-weight: bold;
     font-size: 18px;
-    /* line-height: 20px; */
     color: #222;
     font-family: 'Cambo', serif;
 }
 
-.projectType, .collab {
-    margin: 0 0 0 4px;
-    font-style: italic;
+.project .collab {
     float: right;
-    background-color: rgba(0, 0, 0, 0.288);
-    color: #ddd;
-    display: inline-block;
-    padding: 5px;
-    border-radius: 5px;
+}
+
+.project .projectType {
+    float: right;
 }
 
 .projectDesc {
@@ -229,34 +301,89 @@ input[type=submit] {
     flex-grow: 1;
 }
 
-.logic {
-    background-color: rgb(243, 113, 113);
-    color: #fff;
-}
-
-.presentation {
-    background-color: rgb(118, 204, 118);
-    color: #fff;
-}
-
-.framework {
-    background-color: rgb(106, 106, 240);
-    color: #fff;
-}
-
-/* #main-content {
-    padding: 0 20px 70px;
-} */
-
-section {
-    background-color: #fff;
-    padding: 20px;
-    border: 2px solid #ddd;
-    width: 100%;
+.contact {
+    vertical-align: middle;
     display: inline-block;
-    margin: 0 0 20px;
-    text-align: justify;
-    overflow: auto
+    margin: 1vh 0;
+}
+
+#contact {
+    background-color: rgba(143, 1, 179, 0.069);
+    font-size: 3vh;
+    padding: 2vh 2vw;
+    margin: -1vh 0;
+    background: rgba(143, 1, 179, 0.069); /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom,
+    rgba(255,0,0,0),
+    rgba(143, 1, 179, 0.069) 1vh,
+    rgba(143, 1, 179, 0.069) calc(100% - 1vh), 
+    rgba(255,0,0,0)); /* Standard syntax (must be last) */
+    overflow: hidden;
+}
+
+#contactContainer {
+    display: inline-block;
+}
+
+#network {
+    vertical-align: top;
+}
+
+#network ul {
+    display: inline-block;
+}
+
+#network img {
+    width: 3vw;
+    height: 3vw;
+    vertical-align: middle;
+}
+
+#emailForm {
+    display: inline-block;
+    vertical-align: middle;  
+}
+
+#emailForm form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+#contact input[type=text], input[type=email] {
+    width: 50%;
+    border: 1px solid #aaa;
+    padding: 2px;
+    display: inline-block;
+}
+
+#contact textarea {
+    border: 1px solid #aaa;
+    width: 100%;
+    resize: none;
+    padding: 2px;
+    height: 2em;
+}
+
+#contact textarea:focus {
+    height: 20vh;
+}
+
+.submit {
+    background-color: transparent;
+    display: inline-block;
+    font-size: 2vh;
+    line-height: 2vh;
+    border-radius: 1.5vw;
+    padding: 10px 5px;
+    border-left: .25vw blue solid;
+    border-right: .25vw blue solid;
+    border-top: none;
+    border-bottom: none;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: .5vw;
 }
 
 #about img {
@@ -264,31 +391,46 @@ section {
     margin: 0 1rem .5rem 0;
 }
 
-#connect li {
-    padding: 0 10px;
-}
-
 footer {
-    line-height: 66px;
-    height: 70px;
-    border-top: solid 4px #4aaaa5;
+    line-height: 2vh;
+    height: 2vh;
+    border-top: solid 1px #4aaaa5;
     background-color: #666;
-    font-size: small;
+    font-size: x-small;
     color: #bbb;
     text-align: center;
     overflow: hidden;
-    margin-top: -70px;
+    margin-top: -2vh;
 }
 
-@media screen and (min-width: 640px) {
-    header {
-        height: 70px;    
+@media screen and (max-width: 640px) {
+
+    #wrap {
+        background-color: red;
+    }
+
+    #arena {
+        margin-top: 1vh;
+    }
+    
+    .contact form {
+        order: 1;
+    }
+    
+    #emailForm {
+        float: none;
+        order: 2;
+    }
+
+    #network {
+        order: 3;
     }
     
     #about img {
         width: 50%;
         float: left;                
-    }      
+    }   
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -296,5 +438,17 @@ footer {
 }
 
 @media screen and (min-width: 980px) {      
+}
 
+.clear {
+    clear: both;
+}
+
+#fontfamilies {
+    font-family: 'Courgette', cursive;
+    font-family: 'Sriracha', cursive;
+    font-family: 'Cambo', serif;
+    font-family: 'Kotta One', serif;
+    font-family: 'Alegreya', serif;
+    font-family: 'Roboto Mono', monospace;
 }

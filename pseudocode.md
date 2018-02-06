@@ -8,7 +8,7 @@ findMe(github, linkedIn, twitter);
 <div id="Projects">
   project({ img: x, desc : "", liveLink: y, repoLink: z, collab: true, flag1 = "", flag2 = "" });
 </div>
-skills = { web : [$(<"#jQuery">).addClass("CSS"), JS, Node] , audio : (live.engineer && Ableton) , other : [Photoshop , Excel] };
+skills = { web : [$(<"#jQuery">).addClass("CSS"), JS, Node] , audio : (live.engineer && Ableton, QLab) , other : [Photoshop , Excel] };
 isAvailable(opportunities) = true;
 
 

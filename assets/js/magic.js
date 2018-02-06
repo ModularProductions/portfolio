@@ -1,12 +1,23 @@
 
+var thumbnailLimit = 7;
+
 function displayProjects() {
   for (var i = 0; i < projects.length; i++) {
     var me = projects[i];
-    var project = $("<div class='project'>").attr("value", i);
+    var project = $("<div>").attr("value", i);
     var image = $("<img>").attr("src", me.image).attr("alt", me.name);
+    if (i <= thumbnailLimit) {
+      var thumbnail = $("<div>").attr("value", i);
+      var thumbImage = $("<img>").attr("src", me.image);
+      thumbnail.append(thumbImage);
+      if (i < projects.length -1 &&  i !== thumbnailLimit) {
+        thumbnail.append($("<p>").text(","));
+      }
+      $("#thumbSet").append(thumbnail.addClass("thumbnail"));
+    };
     var info = $("<div class='info'>");
     var titleBar = $("<div>").addClass("titleBar");
-    var type = $("<p>").text(me.type).addClass("projectType");
+    var type = $("<p>").text(me.type).addClass("projectType tag");
     var name = $("<p>").text(me.name).addClass("projectName");
     titleBar.append(type, name);
     var desc = $("<p>").text(me.desc).addClass("projectDesc");
@@ -18,41 +29,82 @@ function displayProjects() {
     if (me.gitLink) {
       linkList.append($("<li>").append($("<a>").text("Git repository").attr("href", me.gitLink).attr("target", "_blank").addClass("link")));
     };
-    var flagList = $("<ul>");
-    me.flags.forEach(function(flag) {
-      var flagType;
-      switch (flag) {
-        default : 
-        case "JS" : flagType = "logic"; break;
-        case "Node" : flagType = "logic"; break;
-        case "CSS" : flagType = "presentation"; break;
-        case "jQuery" : flagType = "presentation"; break;
-        case "API" : flagType = "framework"; break;
+    var tagList = $("<ul>");
+    me.tags.forEach(function(tag) {
+      var tagType;
+      switch (tag) {
+        default :  tagType = "basicTag"; break;
+        case "JS" : tagType = "logic"; break;
+        case "Node" : tagType = "logic"; break;
+        case "CSS" : tagType = "presentation"; break;
+        case "jQuery" : tagType = "presentation"; break;
+        case "API" : tagType = "framework"; break;
+        case "collaboration" : tagType = "collab"; break;
       }
-      $("<li>").text(flag).addClass(flagType+" flag").appendTo(flagList);
+      $("<li>").text(tag).addClass(tagType+" tag").appendTo(tagList);
     });
-    info.append(flagList, linkList);
-    if (me.collab) {
-      $("<li>").text("collaboration").addClass("collab").appendTo(flagList);
-    }
+    info.append(tagList, linkList);
     project.append(image, info);
-    console.log(project);
-    $("#cardContainer").append(project.addClass("small"));
+    $("#projectsDisplay").append(project.addClass("project"));
   }
 }
 
 displayProjects();
 
-$(document).on("click", "#projectsTitleDiv", function() {
-  if ($(".projectsTitle").text() === "collapse.projects()") {
-    $(".projectsTitle").text("expand.projects()");
-    $(".info").toggle();
-    $(".project").addClass("small");
-  } else {
-    $(".projectsTitle").text("collapse.projects()")
-    $(".info").toggle();
-    $(".project").removeClass("small");
+function displayFilters() {
+  var filterSet = [];
+  for (var i = 0; i < projects.length; i++) {
+    var me = projects[i];
+    me.tags.forEach(function(value) {
+        if (!filterSet.includes(value)) {
+          filterSet.push(value)
+      }
+    });
   }
+  filterSet.forEach(function(tag) {
+    var tagType;
+    switch (tag) {
+      default :  tagType = "basicTag"; break;
+      case "JS" : tagType = "logic"; break;
+      case "Node" : tagType = "logic"; break;
+      case "CSS" : tagType = "presentation"; break;
+      case "jQuery" : tagType = "presentation"; break;
+      case "API" : tagType = "framework"; break;
+      case "collaboration" : tagType = "collab"; break;
+    }
+    $("<li>").text(tag).addClass(tagType+" filter").appendTo($("#filterSet"));
+  });
+}
+
+displayFilters();
+
+$(document).on("click", ".filter", function() {
+  if($(this).hasClass("dim")) {
+
+  }
+  $(this).toggleClass("dim");
+  $(".tag:contains('"+$(this).text()+"')").parent().parent().parent().toggle();
+  console.log(this);
+});
+
+$(document).on("click", ".projectsToggle", function() {
+  if ($(".projectsToggle").text() === "collapse.projects") {
+    $(".projectsToggle").text("expand.projects");
+  } else {
+    $(".projectsToggle").text("collapse.projects")
+  }
+  $(".filterArea").toggleClass("hidden");
+  $(".filterArea").toggleClass("inline");
+  $(".thumbnails").toggleClass("inline");
+  $(".thumbnails").toggleClass("hidden");
+  $("#projectsDisplay").slideToggle();
+});
+
+$("#name").hover(function() {
+  $("#network").toggleClass("inline");
+  $("#network").toggleClass("hidden"); 
+  $("#name .pre").toggleClass("inline"); 
+  $("#name .pre").toggleClass("hidden");
 });
 
 function addFlavor(parts, whut) {
@@ -66,6 +118,5 @@ function addFlavor(parts, whut) {
   return flavor
 }
 
-$("h1").prepend(addFlavor(["const ", "dec", "me ", "varname", "= ", "punc"])).append(addFlavor([";", "punc"]));
 $("#arena").prepend(addFlavor(["var ", "dec", "does ", "varname", "= ", "punc"])).append(addFlavor([";", "punc"]));
-$("#projectsTitleDiv").append(addFlavor([" =", "punc", " [ ", "punc"]));
+$("#projectsTitleWithFlavor").append(addFlavor([" =", "punc", " [ ", "punc"]));
