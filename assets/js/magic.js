@@ -87,7 +87,7 @@ $(document).on("click", ".filter", function() {
   console.log(this);
 });
 
-$(document).on("click", ".projectsToggle", function() {
+function viewProjects() {
   if ($(".projectsToggle").text() === "collapse.projects") {
     $(".projectsToggle").text("expand.projects");
   } else {
@@ -98,7 +98,10 @@ $(document).on("click", ".projectsToggle", function() {
   $(".thumbnails").toggleClass("inline");
   $(".thumbnails").toggleClass("hidden");
   $("#projectsDisplay").slideToggle();
-});
+};
+
+$(document).on("click", ".projectsToggle", viewProjects);
+$(document).on("click", ".thumbnail", viewProjects);
 
 $("#name").hover(function() {
   $("#network").toggleClass("inline");
