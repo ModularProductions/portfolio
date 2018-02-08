@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "ConstructorHangman",
+    type : "game",
+    desc : "Another game of Hangman utilizing node.js and npm(require).",
+    image : "assets/images/constructor-hangman.png",
+    webLink : undefined,
+    gitLink : "https://www.github.com/ModularProductions/ConstructorHangman",
+    tags : ["Node", "JS"]
+  },
+  {
     name : "liri-node-app",
     type : "interface",
     desc : "'Liri', a Language Interpretation and Recognition Interface (Node.js learning project)",

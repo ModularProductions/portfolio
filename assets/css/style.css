@@ -94,8 +94,8 @@ a:hover {
     background: red; /* For browsers that do not support gradients */
     background: linear-gradient(to bottom,
     rgba(255,0,0,0),
-    rgba(255, 26, 26, 0.151) 1vh,
-    rgba(255, 26, 26, 0.151) calc(100% - 1vh), 
+    rgba(114, 26, 255, 0.295) 1vh,
+    rgba(114, 26, 255, 0.295) calc(100% - 1vh), 
     rgba(255,0,0,0)); /* Standard syntax (must be last) */
 }
 
@@ -205,14 +205,14 @@ a:hover {
 
 #projectsDisplay {
     display: none;
-    margin: -1vh 0;
+    margin: -.25vh 0;
     max-height: 64vh;
     overflow: auto;
     background: red; /* For browsers that do not support gradients */
     background: linear-gradient(to bottom,
     rgba(255,0,0,0),
-    rgba(255, 26, 26, 0.151) 1vh,
-    rgba(255, 26, 26, 0.151) calc(100% - 1vh), 
+    rgba(114, 26, 255, 0.295) .9vh,
+    rgba(18, 224, 197, 0.521) calc(100% - .9vh), 
     rgba(255,0,0,0)); /* Standard syntax (must be last) */
 }
 
@@ -302,7 +302,7 @@ a:hover {
 }
 
 .contact {
-    vertical-align: middle;
+    vertical-align: top;
     display: inline-block;
     margin: 1vh 0;
 }
@@ -311,12 +311,12 @@ a:hover {
     background-color: rgba(143, 1, 179, 0.069);
     font-size: 3vh;
     padding: 2vh 2vw;
-    margin: -1vh 0;
+    margin: -1.1vh 0;
     background: rgba(143, 1, 179, 0.069); /* For browsers that do not support gradients */
     background: linear-gradient(to bottom,
     rgba(255,0,0,0),
-    rgba(143, 1, 179, 0.069) 1vh,
-    rgba(143, 1, 179, 0.069) calc(100% - 1vh), 
+    rgba(18, 224, 197, 0.521) .9vh,
+    rgba(18, 224, 197, 0.521) calc(100% - .9vh), 
     rgba(255,0,0,0)); /* Standard syntax (must be last) */
     overflow: hidden;
 }
@@ -341,7 +341,6 @@ a:hover {
 
 #emailForm {
     display: inline-block;
-    vertical-align: middle;  
 }
 
 #emailForm form {

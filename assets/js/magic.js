@@ -24,7 +24,7 @@ function displayProjects() {
     info.append(titleBar, desc);
     var linkList = $("<ul>").addClass("projectLinks");
     if (me.webLink) {
-      linkList.append($("<li>").append($("<a>").text("Web link").attr("href", me.webLink).addClass("link")));
+      linkList.append($("<li>").append($("<a>").text("Web link").attr("href", me.webLink).attr("target", "_blank").addClass("link")));
     }
     if (me.gitLink) {
       linkList.append($("<li>").append($("<a>").text("Git repository").attr("href", me.gitLink).attr("target", "_blank").addClass("link")));
