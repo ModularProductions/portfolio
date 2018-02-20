@@ -36,6 +36,7 @@ function displayProjects() {
         default :  tagType = "basicTag"; break;
         case "JS" : tagType = "logic"; break;
         case "Node" : tagType = "logic"; break;
+        case "MySQL" : tagType = "server"; break;
         case "CSS" : tagType = "presentation"; break;
         case "jQuery" : tagType = "presentation"; break;
         case "API" : tagType = "framework"; break;
