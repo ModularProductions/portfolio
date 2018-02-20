@@ -123,7 +123,8 @@ a:hover {
 }
 
 .server {
-    background-color: rgb(252, 243, 152))
+    background-color: rgb(252, 243, 152);
+    color: #fff;
 }
 
 .projectType {
