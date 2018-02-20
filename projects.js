@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "Bamazon",
+    type : "utility",
+    desc : "Inventory database management package.",
+    image : "assets/images/bamazon.png",
+    webLink : undefined,
+    gitLink : "https://www.github.com/ModularProductions/bamazon",
+    tags : ["Node", "MySQL"]
+  },
+  {
     name : "ConstructorHangman",
     type : "game",
     desc : "Another game of Hangman utilizing node.js and npm(require).",

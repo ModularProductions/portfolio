@@ -122,6 +122,10 @@ a:hover {
     color: #fff;
 }
 
+.server {
+    background-color: rgb(252, 243, 152))
+}
+
 .projectType {
     font-style: italic;
     background-color: rgba(0, 0, 0, 0.288);
