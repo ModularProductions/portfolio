@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "Psycho Friend Finder",
+    type : "app",
+    desc : "Dating-app-style program matching a user to another compatible user.",
+    image : "assets/images/psychofriendfinder.png",
+    webLink : "https://psychofriendfinder.herokuapp.com/",
+    gitLink : "https://www.github.com/ModularProductions/FriendFinder",
+    tags : ["Node", "Express"]
+  },
+  {
     name : "Bamazon",
     type : "utility",
     desc : "Inventory database management package.",
