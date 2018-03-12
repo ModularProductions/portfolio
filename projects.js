@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "Burgertime",
+    type : "app",
+    desc : "The least delicious way to enjoy hamburgers, ever. Demonstration of Handlebars and ORMs.",
+    image : "assets/images/burgertime.png",
+    webLink : "https://burgertime-mth.herokuapp.com/",
+    gitLink : "https://github.com/ModularProductions/burger",
+    tags : ["MySQL", "Handlebars", "Express"]
+  },
+  {
     name : "Psycho Friend Finder",
     type : "app",
     desc : "Dating-app-style program matching a user to another compatible user.",

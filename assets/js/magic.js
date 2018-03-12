@@ -1,6 +1,35 @@
 
 var thumbnailLimit = 7;
 
+// take in "type" argument to add class "tag" or "filter"
+//move tag creation into its own function
+function styleTags(tags, type) {
+  var tagList = $("<ul>");  
+  tags.forEach(function(tag) {
+    var tagType;
+    switch (tag) {
+      default :  tagType = "basicTag"; break;
+      case "JS" : tagType = "logic"; break;
+      case "Node" : tagType = "logic"; break;
+      case "Express" : tagType = "server"; break;
+      case "MySQL" : tagType = "server"; break;
+      case "CSS" : tagType = "presentation"; break;
+      case "jQuery" : tagType = "presentation"; break;
+      case "API" : tagType = "framework"; break;
+      case "collaboration" : tagType = "collab"; break;
+      case "Handlebars" : tagType = "server"; break;
+    }
+    if (type === "tag") {
+      console.log("true");
+      $("<li>").text(tag).addClass(tagType+" tag").appendTo(tagList);
+    } else if (type === "filter") {
+      $("<li>").text(tag).addClass(tagType+" filter").appendTo(tagList);
+    }
+  })
+  console.log("taglist =", tagList);
+  return tagList;
+}
+
 function displayProjects() {
   for (var i = 0; i < projects.length; i++) {
     var me = projects[i];
@@ -29,23 +58,8 @@ function displayProjects() {
     if (me.gitLink) {
       linkList.append($("<li>").append($("<a>").text("Git repository").attr("href", me.gitLink).attr("target", "_blank").addClass("link")));
     };
-    var tagList = $("<ul>");
-    me.tags.forEach(function(tag) {
-      var tagType;
-      switch (tag) {
-        default :  tagType = "basicTag"; break;
-        case "JS" : tagType = "logic"; break;
-        case "Node" : tagType = "logic"; break;
-        case "Express" : tagType = "server"; break;
-        case "MySQL" : tagType = "server"; break;
-        case "CSS" : tagType = "presentation"; break;
-        case "jQuery" : tagType = "presentation"; break;
-        case "API" : tagType = "framework"; break;
-        case "collaboration" : tagType = "collab"; break;
-      }
-      $("<li>").text(tag).addClass(tagType+" tag").appendTo(tagList);
-    });
-    info.append(tagList, linkList);
+    info.append(styleTags(me.tags, "tag"), linkList);
+    console.log("project tags =", me.tags);
     project.append(image, info);
     $("#projectsDisplay").append(project.addClass("project"));
   }
@@ -63,21 +77,7 @@ function displayFilters() {
       }
     });
   }
-  filterSet.forEach(function(tag) {
-    var tagType;
-    switch (tag) {
-      default :  tagType = "basicTag"; break;
-      case "JS" : tagType = "logic"; break;
-      case "Node" : tagType = "logic"; break;
-      case "Express" : tagType = "server"; break;
-      case "MySQL" : tagType = "server"; break;
-      case "CSS" : tagType = "presentation"; break;
-      case "jQuery" : tagType = "presentation"; break;
-      case "API" : tagType = "framework"; break;
-      case "collaboration" : tagType = "collab"; break;
-    }
-    $("<li>").text(tag).addClass(tagType+" filter").appendTo($("#filterSet"));
-  });
+  $("#filterSet").append(styleTags(filterSet, "filter"))
 }
 
 displayFilters();
@@ -97,8 +97,8 @@ function viewProjects() {
   } else {
     $(".projectsToggle").text("collapse.projects")
   }
-  $(".filterArea").toggleClass("hidden");
-  $(".filterArea").toggleClass("inline");
+  // $(".filterArea").toggleClass("hidden"); *** restore when filtering works properly
+  // $(".filterArea").toggleClass("inline");
   $(".thumbnails").toggleClass("inline");
   $(".thumbnails").toggleClass("hidden");
   $("#projectsDisplay").slideToggle();
