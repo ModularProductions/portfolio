@@ -32,6 +32,7 @@ function displayProjects() {
     var me = projects[i];
     var project = $("<div>").attr("value", i);
     var image = $("<img>").attr("src", me.image).attr("alt", me.name);
+    // display thumbnails in section header
     if (i <= thumbnailLimit) {
       var thumbnail = $("<div>").attr("value", i);
       var thumbImage = $("<img>").attr("src", me.image);
@@ -41,6 +42,7 @@ function displayProjects() {
       }
       $("#thumbSet").append(thumbnail.addClass("thumbnail"));
     };
+    // display project cards
     var info = $("<div class='info'>");
     var titleBar = $("<div>").addClass("titleBar");
     var type = $("<p>").text(me.type).addClass("projectType tag");
@@ -63,6 +65,7 @@ function displayProjects() {
 
 displayProjects();
 
+// create list of filters from projects array
 var filterSet = [];
 function displayFilters() {
   for (var i = 0; i < projects.length; i++) {
