@@ -145,22 +145,24 @@ a:hover {
 }
 
 .filterAll {
+    vertical-align: middle;
     line-height: 2vh;
     font-size: 1.5vh;
-    margin: 0 .5vw .5vh;
+    margin: 0 .25vw;
     border-radius: 10px;
-    padding: .3vh 1vw;
+    padding: .25vh .5vw;
     border: 1px solid #999;
     background-color: #dd380e;
     color: white;
 }
 
 .filterNone {
+    vertical-align: middle;
     line-height: 2vh;
     font-size: 1.5vh;
-    margin: 0 .5vw .5vh;
+    margin: 0 .25vw;
     border-radius: 10px;
-    padding: .3vh 1vw;
+    padding: .25vh .5vw;
     border: 1px solid #999;
     background-color: #4aaaa5;
     color: white;
@@ -190,11 +192,12 @@ a:hover {
 }
 
 .filter {
+    vertical-align: middle;    
     line-height: 2vh;
     font-size: 1.5vh;
-    margin: 0 .5vw .5vh;
+    margin: 0 .25vw .25vh;
     border-radius: 10px;
-    padding: .3vh 1vw;
+    padding: .25vh .5vw;
     border: 1px solid #999;
 }
 
