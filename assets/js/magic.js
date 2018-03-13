@@ -67,7 +67,7 @@ displayProjects();
 
 // create list of filters from projects array
 var filterSet = [];
-function displayFilters() {
+function displayFilterButtons() {
   for (var i = 0; i < projects.length; i++) {
     var me = projects[i];
     me.tags.forEach(function(value) {
@@ -79,7 +79,7 @@ function displayFilters() {
   $("#filterSet").append(styleTags(filterSet, "filter"))
 }
 
-displayFilters();
+displayFilterButtons();
 
 // filter functionality
 var visibleTags = filterSet.slice();
@@ -163,7 +163,7 @@ $("#name").hover(function() {
   $("#name .pre").toggleClass("hidden");
 });
 
-// takes in paired arguments to construct a <span> for first index and classed by the second index
+// takes in paired arguments to construct a <span> for first index, which is classed by the second index
 function addFlavor(parts) {
   var flavor = $("<div>").addClass("flavor");
   for (var i = 0; i < parts.length; i++) {
