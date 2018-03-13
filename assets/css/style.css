@@ -144,8 +144,26 @@ a:hover {
     vertical-align: middle;
 }
 
-.hideFilter {
-    display: none;
+.filterAll {
+    line-height: 2vh;
+    font-size: 1.5vh;
+    margin: 0 .5vw .5vh;
+    border-radius: 10px;
+    padding: .3vh 1vw;
+    border: 1px solid #999;
+    background-color: #dd380e;
+    color: white;
+}
+
+.filterNone {
+    line-height: 2vh;
+    font-size: 1.5vh;
+    margin: 0 .5vw .5vh;
+    border-radius: 10px;
+    padding: .3vh 1vw;
+    border: 1px solid #999;
+    background-color: #4aaaa5;
+    color: white;
 }
 
 .filterText {
@@ -177,12 +195,12 @@ a:hover {
     margin: 0 .5vw .5vh;
     border-radius: 10px;
     padding: .3vh 1vw;
+    border: 1px solid #999;
 }
 
 .dim {
     background-color: transparent;
     color: #999;
-    border: 1px solid #999;
 }
 
 .thumbnail {    
@@ -210,7 +228,7 @@ a:hover {
 #projectsDisplay {
     display: none;
     margin: -.25vh 0;
-    max-height: 64vh;
+    /* max-height: 64vh; */
     overflow: auto;
     background: red; /* For browsers that do not support gradients */
     background: linear-gradient(to bottom,

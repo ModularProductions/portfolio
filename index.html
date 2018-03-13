@@ -41,16 +41,19 @@
       <span class="projectsToggle">expand.projects</span>
       <span class="filterArea hidden">
         (
-        <span class="filterText">filter :: </span>
+        <span class="filterText">filter 
+          <span class="filterNone">none</span>
+          <span class="filterAll">all</span> 
+        </span> ||
         <ul id="filterSet"></ul>
         );
       </span>
-      = [ <!-- move this inside thumbnails span when filtering works -->
       <span class="thumbnails inline">
+        = [
         <div id="thumbSet">
         </div>
+        ];
       </span>
-      ]; <!-- move this inside thumbnails span when filtering works -->
     </div>
     <div id="projectsDisplay">
     </div>

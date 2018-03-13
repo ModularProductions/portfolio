@@ -1,8 +1,7 @@
-
+// set the number of thumbnails displayed in collapsed view
 var thumbnailLimit = 7;
 
-// take in "type" argument to add class "tag" or "filter"
-//move tag creation into its own function
+// build tag/filter elements and return as unordered list
 function styleTags(tags, type) {
   var tagList = $("<ul>");  
   tags.forEach(function(tag) {
@@ -20,13 +19,11 @@ function styleTags(tags, type) {
       case "Handlebars" : tagType = "server"; break;
     }
     if (type === "tag") {
-      console.log("true");
       $("<li>").text(tag).addClass(tagType+" tag").appendTo(tagList);
     } else if (type === "filter") {
       $("<li>").text(tag).addClass(tagType+" filter").appendTo(tagList);
     }
   })
-  console.log("taglist =", tagList);
   return tagList;
 }
 
@@ -59,7 +56,6 @@ function displayProjects() {
       linkList.append($("<li>").append($("<a>").text("Git repository").attr("href", me.gitLink).attr("target", "_blank").addClass("link")));
     };
     info.append(styleTags(me.tags, "tag"), linkList);
-    console.log("project tags =", me.tags);
     project.append(image, info);
     $("#projectsDisplay").append(project.addClass("project"));
   }
@@ -67,8 +63,8 @@ function displayProjects() {
 
 displayProjects();
 
+var filterSet = [];
 function displayFilters() {
-  var filterSet = [];
   for (var i = 0; i < projects.length; i++) {
     var me = projects[i];
     me.tags.forEach(function(value) {
@@ -82,13 +78,53 @@ function displayFilters() {
 
 displayFilters();
 
-$(document).on("click", ".filter", function() {
-  if($(this).hasClass("dim")) {
+// filter functionality
+var visibleTags = filterSet.slice();
+var invisibleTags = [];
 
+function filterProjects() {
+  for (var i = 0; i < projects.length; i++) {
+    var visible = false;
+    projects[i].tags.forEach(function(ele) {
+      if (visibleTags.includes(ele)) {
+        visible = true;
+      }
+    }) 
+    if (!visible) {
+      $(`.project[value*="${i}`).hide();
+    } else {
+      $(`.project[value*="${i}`).show();
+    }
   }
-  $(this).toggleClass("dim");
-  $(".tag:contains('"+$(this).text()+"')").parent().parent().parent().toggle();
-  console.log(this);
+}
+
+$(document).on("click", ".filterAll", function() {
+  invisibleTags = filterSet.slice();
+  visibleTags = [];
+  $(".filter").addClass("dim");
+  filterProjects();
+});
+
+$(document).on("click", ".filterNone", function() {
+  visibleTags = filterSet.slice();
+  invisibleTags = [];
+  $(".filter").removeClass("dim");
+  filterProjects();
+});
+
+$(document).on("click", ".filter", function() {
+  if (visibleTags.includes($(this).text())) {
+    invisibleTags.push($(this).text());
+    var tagIndex = visibleTags.findIndex(tag => tag === $(this).text());
+    visibleTags.splice(tagIndex, 1);
+    $(this).addClass("dim");
+  } else {
+    visibleTags.push($(this).text());
+    var tagIndex = invisibleTags.findIndex(tag => tag === $(this).text());
+    invisibleTags.splice(tagIndex, 1);
+    $(this).removeClass("dim");
+  }
+  filterProjects();
 });
 
 function viewProjects() {
@@ -97,8 +133,8 @@ function viewProjects() {
   } else {
     $(".projectsToggle").text("collapse.projects")
   }
-  // $(".filterArea").toggleClass("hidden"); *** restore when filtering works properly
-  // $(".filterArea").toggleClass("inline");
+  $(".filterArea").toggleClass("hidden");
+  $(".filterArea").toggleClass("inline");
   $(".thumbnails").toggleClass("inline");
   $(".thumbnails").toggleClass("hidden");
   $("#projectsDisplay").slideToggle();
@@ -114,7 +150,8 @@ $("#name").hover(function() {
   $("#name .pre").toggleClass("hidden");
 });
 
-function addFlavor(parts, whut) {
+// takes in paired arguments to construct a <span> for first index and classed by the second index
+function addFlavor(parts) {
   var flavor = $("<div>").addClass("flavor");
   for (var i = 0; i < parts.length; i++) {
     var bit = $("<span>").text(parts[i]);
