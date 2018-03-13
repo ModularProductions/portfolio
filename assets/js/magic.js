@@ -96,7 +96,17 @@ function filterProjects() {
       $(`.project[value*="${i}`).show();
     }
   }
+  $(".filterAll").removeClass("dim");
+  $(".filterNone").removeClass("dim");
+  if (visibleTags.length === 0) {
+    $(".filterAll").addClass("dim");
+  }
+  if (invisibleTags.length === 0) {
+    $(".filterNone").addClass("dim");
+  }
 }
+
+filterProjects();
 
 $(document).on("click", ".filterAll", function() {
   invisibleTags = filterSet.slice();
