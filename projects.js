@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "Bookmarks.js",
+    type : "app",
+    desc : "Reading List manager for the avid reader. Add books and track them by status or category.",
+    image : "assets/images/bookmarks.png",
+    webLink : "https://bookmarks-gt.herokuapp.com/",
+    gitLink : "https://github.com/emswann/bookmark",
+    tags : ["Sequelize", "Handlebars", "Express"]
+  },
+  {
     name : "Burgertime",
     type : "app",
     desc : "The least delicious way to enjoy hamburgers, ever. Demonstration of Handlebars and ORMs.",
@@ -7,7 +16,7 @@ var projects = [
     webLink : "https://burgertime-mth.herokuapp.com/",
     gitLink : "https://github.com/ModularProductions/burger",
     tags : ["MySQL", "Handlebars", "Express"]
-  },
+  }
   {
     name : "Psycho Friend Finder",
     type : "app",
