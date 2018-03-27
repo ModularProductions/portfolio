@@ -8,15 +8,17 @@ function styleTags(tags, type) {
     var tagType;
     switch (tag) {
       default :  tagType = "basicTag"; break;
-      case "JS" : tagType = "logic"; break;
+      case "JS" : 
       case "Node" : tagType = "logic"; break;
-      case "Express" : tagType = "server"; break;
-      case "MySQL" : tagType = "server"; break;
-      case "CSS" : tagType = "presentation"; break;
+      case "CSS" : 
       case "jQuery" : tagType = "presentation"; break;
       case "API" : tagType = "framework"; break;
       case "collaboration" : tagType = "collab"; break;
-      case "Handlebars" : tagType = "server"; break;
+      case "Express" : 
+      case "MySQL" : 
+      case "Handlebars" :
+      case "Sequelize" : tagType = "server";
+      break;
     }
     if (type === "tag") {
       $("<li>").text(tag).addClass(tagType+" tag").appendTo(tagList);
