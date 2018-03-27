@@ -16,7 +16,7 @@ var projects = [
     webLink : "https://burgertime-mth.herokuapp.com/",
     gitLink : "https://github.com/ModularProductions/burger",
     tags : ["MySQL", "Handlebars", "Express"]
-  }
+  },
   {
     name : "Psycho Friend Finder",
     type : "app",
