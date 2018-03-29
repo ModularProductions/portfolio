@@ -6,7 +6,7 @@ var projects = [
     image : "assets/images/bookmarks.png",
     webLink : "https://bookmarks-gt.herokuapp.com/",
     gitLink : "https://github.com/emswann/bookmark",
-    tags : ["Sequelize", "Handlebars", "Express"]
+    tags : ["Sequelize", "Handlebars", "Express", "collaboration"]
   },
   {
     name : "Burgertime",
