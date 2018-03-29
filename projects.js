@@ -4,7 +4,7 @@ var projects = [
     type : "app",
     desc : "Reading List manager for the avid reader. Add books and track them by status or category.",
     image : "assets/images/bookmarks.png",
-    webLink : "https://bookmarks-gt.herokuapp.com/",
+    webLink : "https://bookmark-gt.herokuapp.com/",
     gitLink : "https://github.com/emswann/bookmark",
     tags : ["Sequelize", "Handlebars", "Express", "collaboration"]
   },
