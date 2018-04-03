@@ -313,10 +313,6 @@ a:hover {
     font-family: 'Cambo', serif;
 }
 
-.project .collab {
-    float: right;
-}
-
 .project .projectType {
     float: right;
 }
@@ -328,6 +324,8 @@ a:hover {
 .project li {
     flex-grow: 1;
 }
+
+
 
 .contact {
     vertical-align: top;
@@ -354,7 +352,7 @@ a:hover {
 }
 
 #network {
-    vertical-align: top;
+    display: inline;
 }
 
 #network ul {
@@ -365,6 +363,10 @@ a:hover {
     width: 3vw;
     height: 3vw;
     vertical-align: middle;
+}
+
+#network p {
+    display: inline;
 }
 
 #emailForm {

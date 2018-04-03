@@ -3,7 +3,7 @@ var thumbnailLimit = 7;
 
 // build tag/filter elements and return as unordered list
 function styleTags(tags, type) {
-  var tagList = $("<ul>");  
+  var tagList = $("<ul>").addClass("tagList");  
   tags.forEach(function(tag) {
     var tagType;
     switch (tag) {
@@ -157,13 +157,6 @@ function viewProjects() {
 
 $(document).on("click", ".projectsToggle", viewProjects);
 $(document).on("click", ".thumbnail", viewProjects);
-
-$("#name").hover(function() {
-  $("#network").toggleClass("inline");
-  $("#network").toggleClass("hidden"); 
-  $("#name .pre").toggleClass("inline"); 
-  $("#name .pre").toggleClass("hidden");
-});
 
 // takes in paired arguments to construct a <span> for first index, which is classed by the second index
 function addFlavor(parts) {

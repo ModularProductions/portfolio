@@ -9,6 +9,14 @@ var projects = [
     tags : ["Sequelize", "Handlebars", "Express", "collaboration"]
   },
   {
+    name : "DestinyFlexArmor",
+    type : "utility",
+    desc : "Recursive algorithm to answer a question nobody asked about a game you probably aren't interested in.",
+    image : "assets/images/destinyflexarmor.png",
+    gitLink : "https://github.com/ModularProductions/DestinyFlexArmor",
+    tags : ["JS"]
+  },
+  {
     name : "Burgertime",
     type : "app",
     desc : "The least delicious way to enjoy hamburgers, ever. Demonstration of Handlebars and ORMs.",
