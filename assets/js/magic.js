@@ -172,3 +172,24 @@ function addFlavor(parts) {
 
 $("#arena").prepend(addFlavor(["var ", "dec", "does ", "varname", "= ", "punc"])).append(addFlavor([";", "punc"]));
 $("#projectsTitleWithFlavor").append(addFlavor([" =", "punc", " [ ", "punc"]));
+
+var iAm = ["web developer.", "visual artist.", "sound engineer.", "stage tech."];
+var iLike = ["design.", "build.", "customize.", "rewire.", "remix.", "repurpose."]
+setInterval(function() {
+  $("span.iAm").fadeOut(800, function() {
+    iAm.push(iAm.shift());
+    $("span.iAm").text(iAm[0]);
+    $("span.iAm").fadeIn();
+  });
+}, 3000);
+
+setInterval(function() { 
+  $("span.iLike").fadeOut(400, function() {
+    iLike.push(iLike.shift());
+    $("span.iLike").text(iLike[0]);
+    $("span.iLike").fadeIn();
+  })
+}, 2000);
+
+// add "I use [JavaScript, CSS, jQuery...]"
+
