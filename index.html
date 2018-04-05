@@ -28,7 +28,7 @@
     <div id="arena">
       <span class="arenaWords">design and development</span>
     </div>
-    <div id="projectsMenu">
+    <div id="projects">
       <span class="projectsToggle">expand.projects</span>
       <span class="filterArea hidden">
         (
@@ -45,34 +45,35 @@
         </div>
         ];
       </span>
+      <div id="projectsDisplay"></div>
     </div>
-    <div id="projectsDisplay">
-    </div>
-    <div id="contact">
-      <div id="network">
-        <p>$.find(me)</p>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/matt-haddock-812804146/" target="_blank"><img src="assets/images/linkedin.png" width="30" height="30" alt="LinkedIn" /></a></li>
-          <li><a href="http://www.github.com/ModularProductions" target="_blank"><img src="assets/images/github.png" width="30" height="30" alt="GitHub" /></a></li>
-          <li><a href="http://www.twitter.com/TheNosferadude" target="_blank"><img src="assets/images/twitter.png" width="30" height="30" alt="Twitter" /></a></li>
-          <li><a href="http://www.stackoverflow.com/users/8679340/nosferadude" target="_blank"><img src="assets/images/stackoverflow.png" width="30" height="30" alt="Stack Overflow" /></a></li>
-        </ul>
-      </div>
-      <div id="contactContainer">
-        <div class="contact">$(hitMe).up<span class="submit">"SEND", message</span></div>
-        <div id = "emailForm">
-          <form method="post" name="myemailform" action="contact.php">
-            <input type="submit" name='submit' class="hidden">
-            <input type="text" name="name" placeholder="name">
-            <input type="email" name="email" placeholder="email@address.com">
-            <textarea name="message" placeholder="tell me your secrets"></textarea>
-          </form>
-        </div>
-      </div>
+    <div id="about">
+      <img src="./assets/images/circle-portrait.png" alt="portrait" />
+      <p>Hi, I'm Matt. I wear a lot of figurative hats, but very few real ones. I'm an audio engineer, stage technician, sound designer, visual artist, and web developer. I like designing, making, customizing, rewiring, and repurposing. You can see some of my development projects up there, and contact information down there. </p>
     </div>
   </div> <!-- wrap -->
   <footer>
-    <p>© Copyright 2018 Matt Haddock</p>
+    <div id="network">
+      <ul>
+        <li><a href="https://www.linkedin.com/in/matt-haddock-812804146/" target="_blank"><img src="assets/images/linkedin.png" width="30" height="30" alt="LinkedIn" /></a></li>
+        <li><a href="http://www.github.com/ModularProductions" target="_blank"><img src="assets/images/github.png" width="30" height="30" alt="GitHub" /></a></li>
+        <li><a href="http://www.twitter.com/TheNosferadude" target="_blank"><img src="assets/images/twitter.png" width="30" height="30" alt="Twitter" /></a></li>
+        <li><a href="http://www.stackoverflow.com/users/8679340/nosferadude" target="_blank"><img src="assets/images/stackoverflow.png" width="30" height="30" alt="Stack Overflow" /></a></li>
+      </ul>
+    </div>
+    <div id="contactContainer">
+      <div class="contact">
+        <p>$(hitMe).up</p>
+      </div>
+      <div id = "emailForm">
+        <form method="post" name="myemailform" action="form-to-email.php">
+          <input type="text" name="name" placeholder="name">
+          <input type="email" name="email" placeholder="email@address.com">
+          <textarea name="message" placeholder="tell me your secrets"></textarea>
+          <input type="submit" name='submit'>
+        </form>
+      </div>
+    </div>
   </footer>
     <!-- <div id="main-content">
       <section id="about">
