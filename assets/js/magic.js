@@ -101,31 +101,9 @@ function filterProjects() {
       $(`.project[value*="${i}`).show();
     }
   }
-  $(".filterAll").removeClass("dim");
-  $(".filterNone").removeClass("dim");
-  if (visibleTags.length === 0) {
-    $(".filterAll").addClass("dim");
-  }
-  if (invisibleTags.length === 0) {
-    $(".filterNone").addClass("dim");
-  }
 }
 
 filterProjects();
-
-$(document).on("click", ".filterAll", function() {
-  invisibleTags = filterSet.slice();
-  visibleTags = [];
-  $(".filter").addClass("dim");
-  filterProjects();
-});
-
-$(document).on("click", ".filterNone", function() {
-  visibleTags = filterSet.slice();
-  invisibleTags = [];
-  $(".filter").removeClass("dim");
-  filterProjects();
-});
 
 $(document).on("click", ".filter", function() {
   if (visibleTags.includes($(this).text())) {
@@ -143,19 +121,18 @@ $(document).on("click", ".filter", function() {
 });
 
 function viewProjects() {
-  if ($(".projectsToggle").text() === "collapse.projects") {
-    $(".projectsToggle").text("expand.projects");
-  } else {
-    $(".projectsToggle").text("collapse.projects")
-  }
   $(".filterArea").toggleClass("hidden");
-  $(".filterArea").toggleClass("inline");
-  $(".thumbnails").toggleClass("inline");
   $(".thumbnails").toggleClass("hidden");
-  $("#projectsDisplay").slideToggle();
+  $("#projectsDisplay").slideToggle("medium", function() {
+    if ($(this).is(':visible'))
+    $(this).css('display','flex');
+  });
 };
 
-$(document).on("click", ".projectsToggle", viewProjects);
+$(document).on("click", ".projectsToggle, .viewButtons", function() {
+  viewProjects();
+  $(".viewAll, .viewNone").toggleClass("dim");
+});
 $(document).on("click", ".thumbnail", viewProjects);
 
 // takes in paired arguments to construct a <span> for first index, which is classed by the second index

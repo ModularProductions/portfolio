@@ -6,19 +6,11 @@ html, body {
     height: 100%;
     box-sizing: border-box;
     text-align: right;
-    font-size: 2vh;
+    font-size: 1rem;
 }
 
 body {
     background: url("../images/creampaper.png");
-    /* For browsers that do not support gradients */
-    background: rgba(114, 26, 255, 0.295); 
-    background: linear-gradient(to bottom,
-      rgba(18, 224, 197, 0.0), 
-      rgba(114, 26, 255, 0.425)
-        );
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     color: #777;
     line-height: 150%;
@@ -30,26 +22,23 @@ body {
 
 #name {
     font-family: 'Cambo', serif;
-    font-size: 8vh;
-    line-height: 8vh;
-    padding: 0 2vw;
+    font-size: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
     display: block;
 }
 
 h1 {
     font-family: 'Cambo', serif;
-    font-size: 8h;
-    line-height: 8vh;
     display: inline;
 }
 
 #arena {
     font-family: 'Cambo', serif;
     color: #c55555;
-    font-size: 4vh;
-    line-height: 2.5vh;
+    font-size: 2rem;
+    line-height: 2rem;
     padding: 1vh 2vw 2vh;
-    padding-bottom: 1.5rem;
 }
 
 .dec, .varname, .punc {
@@ -85,41 +74,65 @@ a:hover {
 #wrap {
     min-height: 100%;
     padding-top: 1rem;
-    padding-bottom: 5rem;;
+    padding-bottom: 5rem;
+    /* For browsers that do not support gradients */
+    background: rgba(114, 26, 255, 0.295); 
+    background: linear-gradient(to bottom,
+        rgba(18, 224, 197, 0.0), 
+        rgba(114, 26, 255, 0.425)
+        );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #projects {
     font-family: 'Cambo', serif;
-    color: #22e;
-    font-size: 4vh;
+    color: rgb(84, 84, 208);
+    font-size: 2rem;
+    line-height: 2rem;
     background-color: rgba(255, 26, 26, 0.151);
-    padding: 2vh 2vw;
-    margin: -1vh 0;
-    vertical-align: middle;
+    padding: .5rem .5rem;
     background: rgba(114, 26, 255, 0.295);
     /* For browsers that do not support gradients */
     background: linear-gradient(to left,
-      rgba(114, 26, 255, 0.295),
-      rgba(18, 224, 197, 0.521) 
-        );
+    rgba(114, 26, 255, 0.295),
+    rgba(18, 224, 197, 0.521) 
+    );
     /* Standard syntax (must be last) */
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
 }
 
-#projectsDisplay {
-    display: none;
-    margin: -.25vh 0;
-    overflow: auto;
+.thumbnail {    
+    display: inline-block;
+    margin-top: .5rem;
+}
 
+.thumbnail p {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.thumbnail img {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 1.5rem;;
+    overflow: auto;
+}
+
+#thumbSet {
+    display: inline;
 }
 
 .hidden {
     display: none;
 }
 
+.flex {
+    display: flex;
+}
+
 .inline {
-    display: inline-block;;
+    display: inline-block;
 }
 
 .logic {
@@ -153,41 +166,33 @@ a:hover {
     color: #ddd;
 }
 
-.filterArea {
-    margin-left: -1vw;
-    margin: .5vh .5vw .5vh 0;
+.viewAll, .viewNone {
     vertical-align: middle;
+    font-size: .75rem;
+    border-radius: 10px;
+    padding: .2rem .4rem;
+    border: 1px solid #777;
+    color: white;
 }
 
-.filterAll {
-    vertical-align: middle;
-    line-height: 2vh;
-    font-size: 1.5vh;
-    margin: 0 .25vw;
-    border-radius: 10px;
-    padding: .25vh .5vw;
-    border: 1px solid #999;
+.viewAll {
     background-color: #dd380e;
-    color: white;
 }
 
-.filterNone {
-    vertical-align: middle;
-    line-height: 2vh;
-    font-size: 1.5vh;
-    margin: 0 .25vw;
-    border-radius: 10px;
-    padding: .25vh .5vw;
-    border: 1px solid #999;
+.viewNone {
     background-color: #4aaaa5;
-    color: white;
 }
 
-.filterText {
+.viewButtons {
     color: #5288da;
-    font-size: 2.5vh;
+    font-size: 1rem;
     vertical-align: middle;
     line-height: 4vh;
+}
+
+.filterArea {
+    margin-top: .5rem;
+    font-size: 2rem;
 }
 
 #filterSet {
@@ -195,24 +200,19 @@ a:hover {
 }
 
 #filterSet ul {
-    /* vertical-align: baseline; */
-    margin: auto;
     display: inline;
-    max-width: 70%;
 }
 
 #filterSet li {
+    margin: 0 .25rem;
+    font-size: 1rem;
+    line-height: 2rem;
     vertical-align: middle;
-    margin: 0 .25vw;
+    padding: 0 .5rem;
 }
 
 .filter {
-    vertical-align: middle;    
-    line-height: 2vh;
-    font-size: 1.5vh;
-    margin: 0 .25vw .25vh;
     border-radius: 10px;
-    padding: .25vh .5vw;
     border: 1px solid #999;
 }
 
@@ -221,48 +221,36 @@ a:hover {
     color: #999;
 }
 
-.thumbnail {    
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.thumbnail p {
-    display: inline-block;
-    margin: 0 3px;
-}
-
-.thumbnail img {
-    border-radius: 10px;
-    overflow: hidden;
-    height: 4vh;
-    overflow: auto;
-}
-
-#thumbSet {
-    display: inline;
-    overflow: visible;
+#projectsDisplay {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .project {
-    vertical-align: top;
+    /* height: 22rem; */
+    vertical-align: middle;
     text-align: left;
-    width: 250px;
+    width: 230px;
     margin: 10px;
     background-color: rgb(219, 217, 197);
     border-radius: 10px;
     overflow: hidden;
-    display: inline-block;
 }
 
 .project img {
     width: 100%;
     margin: 0;
-    margin-bottom: -8px;
+    flex: 1;
+    border-bottom: 2px solid #333;
 }
 
 .info {
-    border-top: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 10px 10px 5px;
+    height: 9rem;
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     line-height: 12px;
@@ -270,13 +258,20 @@ a:hover {
 
 .titleBar {
     height: 25px;
-    /* clear: both; */
+    flex: 1;
+}
+
+.projectName {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #222;
+    font-family: 'Cambo', serif;
 }
 
 .info a {
     border: 1px solid #444;
     padding: 1px 3px;
-
 }
 
 .tag {
@@ -289,7 +284,28 @@ a:hover {
     margin: 2px;
 }
 
+.tagList {
+    flex: 1;
+    margin-bottom: auto;
+}
+
+.projectType {
+    float: right;
+}
+
+.projectDesc {
+    flex: 1;
+    text-align: initial;
+    color: #444;
+    margin-bottom: .25rem;
+}
+
+.project li {
+    flex-grow: 1;
+}
+
 .projectLinks {
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -307,66 +323,47 @@ a:hover {
     display: block;
 }
 
-.projectName {
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-    color: #222;
-    font-family: 'Cambo', serif;
-}
-
-.project .projectType {
-    float: right;
-}
-
-.projectDesc {
-    text-align: initial;
-}
-
-.project li {
-    flex-grow: 1;
-}
-
 #about {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 2rem;
-    overflow: auto;
+    overflow: visible;
     text-align: left;
     background-color: rgba(18, 224, 197, 0.521);
     background: linear-gradient(to left,
     rgba(255,0,0,0),
-    /* rgba(186, 255, 246, 0.521),  */
     rgba(96, 247, 202, 0.521)
     );
     /* Standard syntax (must be last) */
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
+    height: auto !important;
 }
 
 #about section {
-    /* position: absolute;
-    top: 50%; */
-    width: 20vw;
-
-    display: inline;
+    color: #333;
+    min-width: 24rem !important;
     margin: 0 auto;
+    width: 24rem;
+    height: 9rem;
 }
 
 #about p {
+    vertical-align: bottom;
     font-size: 1.5rem;
     line-height: 2rem;
     font-family: 'Cambo', serif;
-    /* margin-left: 2rem; */
 }
 
 #about img {
-    float: left;
-    width: 40vw;
-    margin-right: 2rem;
-    /* margin: 0 auto; */
+    width: 30%;
+    min-width: 20rem;
+    margin: 0 auto;    
 }
 
-.iAm .iLike {
-    white-space: pre;
+span.iAm, span.iLike {
+    white-space: pre-line;    
 }
 
 .contact {
@@ -374,14 +371,16 @@ a:hover {
 }
 
 footer {
-    min-height: 5rem;
-    /* line-height: 5rem; */
-    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 5rem;
+    overflow: hidden;
     margin-top: -5rem;
     font-size: 1.5rem;
     text-align: center;
-    padding: 1.5rem;
-    /* padding: 2vh 2vw; */
+    padding: 1rem;
     background: rgba(143, 1, 179, 0.069);
     background-color: rgba(143, 1, 179, 0.069);
     /* For browsers that do not support gradients */
@@ -392,31 +391,15 @@ footer {
         );
         /* Standard syntax (must be last) */
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-}
-
-#network {
-    float: left;
-}
-
-#network ul {
-    /* flex-grow: 1; */
-    display: inline-block;
 }
 
 #network img {
     width: 2.5rem;
     height: 2.5rem;
-    /* margin: auto; */
 }
 
-#network p {
-    flex-grow: 1;
-    display: inline;
-}
-
-#emailForm {
-    float: right;
+footer p {
+    margin: -.5rem 0 .5rem;
 }
 
 #emailForm form {
@@ -424,10 +407,6 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     width: 300px;
-}
-
-#contact p {
-    /* display: inline; */
 }
 
 #emailForm  input[type=text], input[type=email] {
@@ -452,46 +431,7 @@ footer {
 
 span.clear { clear: left; display: block; }
 
-@media screen and (max-width: 640px) {
-
-    #wrap {
-        /* background-color: red; */
-    }
-
-    #arena {
-        margin-top: 1vh;
-    }
-    
-    .contact form {
-        order: 1;
-    }
-    
-    #emailForm {
-        float: none;
-        order: 2;
-    }
-
-    #network {
-        order: 3;
-    }
-    
-    #about img {
-        /* width: 50%;
-        float: left;                 */
-    }   
-    
-}
-
-@media screen and (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 980px) {      
-}
-
 #fontfamilies {
-    font-family: 'Courgette', cursive;
-    font-family: 'Sriracha', cursive;
     font-family: 'Cambo', serif;
     font-family: 'Kotta One', serif;
     font-family: 'Alegreya', serif;

@@ -29,23 +29,25 @@
       <span class="arenaWords">design and development</span>
     </div>
     <div id="projects">
-      <span class="projectsToggle">expand.projects</span>
-      <span class="filterArea hidden">
-        (
-        <span class="filterText">filter 
-          <span class="filterNone">none</span>
-          <span class="filterAll">all</span> 
-        </span> ||
-        <ul id="filterSet"></ul>
-        );
+      <span class="projectsToggle">projects</span>
+      <span class="viewButtons">
+        ( view 
+        <span class="viewAll">all</span>
+        <span class="viewNone dim">none</span>
+        )
       </span>
-      <span class="thumbnails inline">
-        = [
+      <div class="filterArea hidden">
+        [
+        <ul id="filterSet"></ul>
+        ];
+      </div>
+      <div class="thumbnails">
+        [
         <div id="thumbSet">
         </div>
         ];
-      </span>
-      <div id="projectsDisplay"></div>
+      </div>
+      <div id="projectsDisplay" class="hidden"></div>
     </div>
     <div id="about">
       <img src="./assets/images/circle-portrait.png" alt="portrait" />
@@ -54,6 +56,7 @@
         <p>I like to <span class="iLike">design.</span></p>
         <p>Check out some work up there, and drop me a line down there.</p>
       </section>
+      <!-- <span class="clear"></span> -->
     </div>
   </div> <!-- wrap -->
   <footer>
