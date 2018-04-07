@@ -3,30 +3,41 @@ var thumbnailLimit = 7;
 
 // build tag/filter elements and return as unordered list
 function styleTags(tags, type) {
-  var tagList = $("<ul>").addClass("tagList");  
-  tags.forEach(function(tag) {
+  if (type === "projectType") {
     var tagType;
-    switch (tag) {
-      default :  tagType = "basicTag"; break;
-      case "JS" : 
-      case "Node" : tagType = "logic"; break;
-      case "CSS" : 
-      case "jQuery" : tagType = "presentation"; break;
-      case "API" : tagType = "framework"; break;
-      case "collaboration" : tagType = "collab"; break;
-      case "Express" : 
-      case "MySQL" : 
-      case "Handlebars" :
-      case "Sequelize" : tagType = "server";
-      break;
+    switch (tags) {
+      case "game" : tagType = "gameTag"; break;
+      case "interface" : tagType = "interfaceTag"; break;
+      case "utility" : tagType = "utilityTag"; break;
+      case "app" : tagType = "appTag"; break;
     }
-    if (type === "tag") {
-      $("<li>").text(tag).addClass(tagType+" tag").appendTo(tagList);
-    } else if (type === "filter") {
-      $("<li>").text(tag).addClass(tagType+" filter").appendTo(tagList);
-    }
-  })
-  return tagList;
+    var tag = $("<p>").text(tags).addClass(tagType).addClass("projectType").addClass("tag");
+    return tag;
+  } else {
+    var tagList = $("<ul>").addClass("tagList");  
+    tags.forEach(function(tag) {
+      var tagType;
+      switch (tag) {
+        default : tagType = "basicTag"; break;
+        case "JS" : 
+        case "Node" : tagType = "logicTag"; break;
+        case "CSS" : 
+        case "jQuery" : tagType = "presentationTag"; break;
+        case "API" : tagType = "frameworkTag"; break;
+        case "collaboration" : tagType = "collabTag"; break;
+        case "Express" : 
+        case "MySQL" : 
+        case "Handlebars" :
+        case "Sequelize" : tagType = "serverTag"; break;
+      }
+      if (type === "tag") {
+        $("<li>").text(tag).addClass(tagType+" tag").appendTo(tagList);
+      } else if (type === "filter") {
+        $("<li>").text(tag).addClass(tagType+" filter").appendTo(tagList);
+      }
+    })
+    return tagList;
+  }
 }
 
 function displayProjects() {
@@ -45,13 +56,12 @@ function displayProjects() {
       $("#thumbSet").append(thumbnail.addClass("thumbnail"));
     };
     // display project cards
+    var imageUrl = "../"+me.image;
+    var imageArea = $("<div>").css("background-image", "url('"+me.image+"')").addClass("imageArea");
+    imageArea.append(styleTags(me.type, "projectType"));
     var info = $("<div class='info'>");
-    var titleBar = $("<div>").addClass("titleBar");
-    var type = $("<p>").text(me.type).addClass("projectType tag");
-    var name = $("<p>").text(me.name).addClass("projectName");
-    titleBar.append(type, name);
+    var name = $("<h3>").text(me.name).addClass("projectName");
     var desc = $("<p>").text(me.desc).addClass("projectDesc");
-    info.append(titleBar, desc);
     var linkList = $("<ul>").addClass("projectLinks");
     if (me.webLink) {
       linkList.append($("<li>").append($("<a>").text("Web link").attr("href", me.webLink).attr("target", "_blank").addClass("link")));
@@ -59,8 +69,8 @@ function displayProjects() {
     if (me.gitLink) {
       linkList.append($("<li>").append($("<a>").text("Git repository").attr("href", me.gitLink).attr("target", "_blank").addClass("link")));
     };
-    info.append(styleTags(me.tags, "tag"), linkList);
-    project.append(image, info);
+    info.append(name, desc, styleTags(me.tags, "tag"));
+    project.append(imageArea, info, linkList);
     $("#projectsDisplay").append(project.addClass("project"));
   }
 }
