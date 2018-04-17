@@ -23,6 +23,7 @@ function styleTags(tags, type) {
         case "Node" : tagType = "logicTag"; break;
         case "CSS" : 
         case "jQuery" : tagType = "presentationTag"; break;
+        case "React" :
         case "API" : tagType = "frameworkTag"; break;
         case "collaboration" : tagType = "collabTag"; break;
         case "Express" : 

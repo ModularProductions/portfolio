@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "Ocean's Shuffle",
+    type : "game",
+    desc : "Memory game built in React.",
+    image : "assets/images/clickygame.png",
+    webLink : "http://ModularProductions.github.io/ClickyGame/",
+    gitLink : "https://github.com/ModularProductions/clickygame",
+    tags : ["React"]
+  },
+  {
     name : "Bookmarks.js",
     type : "app",
     desc : "Reading List manager for the avid reader. Add books and track them by status or category.",
