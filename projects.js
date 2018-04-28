@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "NYTimes Scraper",
+    type : "app",
+    desc : "MERN-stack application; search for and save news articles",
+    image : "assets/images/nyt-react.png",
+    webLink : "https://nyt-react-mth.herokuapp.com/saved",
+    gitLink : "https://github.com/ModularProductions/nyt-react",
+    tags : ["React", "MongoDB"]
+  },
+  {
     name : "Ocean's Shuffle",
     type : "game",
     desc : "Memory game built in React.",
