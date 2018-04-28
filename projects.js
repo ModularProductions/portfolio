@@ -4,7 +4,7 @@ var projects = [
     type : "app",
     desc : "MERN-stack application; search for and save news articles",
     image : "assets/images/nyt-react.png",
-    webLink : "https://nyt-react-mth.herokuapp.com/saved",
+    webLink : "https://nyt-react-mth.herokuapp.com/",
     gitLink : "https://github.com/ModularProductions/nyt-react",
     tags : ["React", "MongoDB"]
   },
