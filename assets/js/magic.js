@@ -28,6 +28,7 @@ function styleTags(tags, type) {
         case "collaboration" : tagType = "collabTag"; break;
         case "Express" : 
         case "MySQL" : 
+        case "MongoDB" : 
         case "Handlebars" :
         case "Sequelize" : tagType = "serverTag"; break;
       }
