@@ -34,24 +34,24 @@ var projects = [
     gitLink : "https://github.com/ModularProductions/DestinyFlexArmor",
     tags : ["JS"]
   },
-  {
-    name : "Burgertime",
-    type : "app",
-    desc : "The least delicious way to enjoy hamburgers, ever. Demonstration of Handlebars and ORMs.",
-    image : "assets/images/burgertime.png",
-    webLink : "https://burgertime-mth.herokuapp.com/",
-    gitLink : "https://github.com/ModularProductions/burger",
-    tags : ["MySQL", "Handlebars", "Express"]
-  },
-  {
-    name : "Psycho Friend Finder",
-    type : "app",
-    desc : "Dating-app-style program matching a user to another compatible user.",
-    image : "assets/images/psychofriendfinder.png",
-    webLink : "https://psychofriendfinder.herokuapp.com/",
-    gitLink : "https://www.github.com/ModularProductions/FriendFinder",
-    tags : ["Node", "Express"]
-  },
+  // {
+  //   name : "Burgertime",
+  //   type : "app",
+  //   desc : "The least delicious way to enjoy hamburgers, ever. Demonstration of Handlebars and ORMs.",
+  //   image : "assets/images/burgertime.png",
+  //   webLink : "https://burgertime-mth.herokuapp.com/",
+  //   gitLink : "https://github.com/ModularProductions/burger",
+  //   tags : ["MySQL", "Handlebars", "Express"]
+  // },
+  // {
+  //   name : "Psycho Friend Finder",
+  //   type : "app",
+  //   desc : "Dating-app-style program matching a user to another compatible user.",
+  //   image : "assets/images/psychofriendfinder.png",
+  //   webLink : "https://psychofriendfinder.herokuapp.com/",
+  //   gitLink : "https://www.github.com/ModularProductions/FriendFinder",
+  //   tags : ["Node", "Express"]
+  // },
   {
     name : "Bamazon",
     type : "utility",
@@ -70,21 +70,21 @@ var projects = [
     gitLink : "https://www.github.com/ModularProductions/ConstructorHangman",
     tags : ["Node", "JS"]
   },
-  {
-    name : "liri-node-app",
-    type : "interface",
-    desc : "'Liri', a Language Interpretation and Recognition Interface (Node.js learning project)",
-    image : "assets/images/liri-node-app.png",
-    webLink : undefined,
-    gitLink : "https://www.github.com/ModularProductions/liri-node-app.git",
-    tags : ["Node", "API"]
-  },
+  // {
+  //   name : "liri-node-app",
+  //   type : "interface",
+  //   desc : "'Liri', a Language Interpretation and Recognition Interface (Node.js learning project)",
+  //   image : "assets/images/liri-node-app.png",
+  //   webLink : undefined,
+  //   gitLink : "https://www.github.com/ModularProductions/liri-node-app.git",
+  //   tags : ["Node", "API"]
+  // },
   {
     name : "eventTravel",
     type : "app",
     desc : "Quickly budget a trip to see ticketed performances in other cities (API learning project)",
     image : "assets/images/eventTravel.png",
-    webLink : "http://ModularProductions.github.io/eventTravel/",
+    // webLink : "http://ModularProductions.github.io/eventTravel/",
     gitLink : "https://www.github.com/ModularProductions/eventTravel.git",
     tags : ["API", "JS", "jQuery", "collaboration"]
   },
