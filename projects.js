@@ -1,5 +1,14 @@
 var projects = [
   {
+    name : "Labyrinth",
+    type : "game",
+    desc : "Explore and solve puzzles in this adaptation of classic Interactive Fiction for a MERN-stack environment.",
+    image : "assets/images/labyrinth.png",
+    webLink : "https://labyrinthjs.herokuapp.com/",
+    gitLink : "https://github.com/ModularProductions/LabyrinthJS",
+    tags : ["React", "MongoDB", "JS"]
+  },
+  {
     name : "NYTimes Scraper",
     type : "app",
     desc : "MERN-stack application; search for and save news articles",
