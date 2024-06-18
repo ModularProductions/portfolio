@@ -288,7 +288,8 @@ a:hover {
 #about img {
     width: 30%;
     min-width: 20rem;
-    margin: 0 auto;    
+    margin: 0 auto;
+    border-radius: 50%;
 }
 
 span.iAm, span.iLike {
